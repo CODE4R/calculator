@@ -1,0 +1,166 @@
+using namespace std;
+#include<iostream>
+#include<string.h>
+class complex
+{ int real;
+int img;
+
+public:
+	
+complex()
+{cout<<"\n default construtor call";
+this->real=0;
+this->img=0;
+}
+
+	complex(int a,int b)
+	{
+		this->real=a;
+		this->img=b;
+		
+	}
+	complex operator+(complex c2)
+	{complex temp;
+	temp.real=this->real+c2.real;
+	temp.img=this->img+c2.img;
+return temp;
+}
+ complex operator+(int a)
+{complex temp;
+temp.real=this->real+a;
+temp.img=this->img+a;
+return temp;
+}
+complex operator-(complex c2)
+{complex temp;
+temp.real=this->real-c2.real;
+temp.img=this->img-c2.img;
+return temp;
+}
+complex operator-(int a)
+{complex temp;
+temp.real=this->real-a;
+temp.img=this->img-a;
+return temp;
+}
+complex operator*(complex c2)
+{complex temp;
+temp.real=this->real*c2.real;
+temp.img=this->img*c2.img;
+return temp;
+}
+complex operator*(int a)
+{complex temp;
+temp.real=this->real*a;
+temp.img=this->img*a;
+return temp;
+}
+complex operator/(complex c2)
+{complex temp;
+temp.real=this->real/c2.real;
+temp.img=this->img/c2.img;
+return temp;
+}
+complex operator/(int a)
+{complex temp;
+temp.real=this->real/a;
+temp.img=this->img/a;
+return temp;
+}
+void setreal(int r)
+{this->real=r;
+}
+void setimg(int i)
+{this->img=i;
+}
+int getreal()
+{return this->real;
+}
+int getimg()
+{return this->img;
+}
+
+display()
+{cout<<"\n"<<this->real<<"+"<<this->img<<"i";
+}
+};
+complex operator+(int ,complex );
+complex operator-(int ,complex);
+complex operator*(int ,complex );
+complex operator/(int ,complex);
+main()
+{complex c1(20,10);
+complex c2(10,30);
+complex c3;
+c3=c1+c2;
+c3.display();
+complex c4;
+c4=c1+20;
+c4.display();
+complex c5;
+c5=10+c2;
+c5.display();
+complex c6;
+c6=c1-c2;
+c6.display();
+complex c7;
+c7=c1-10;
+c7.display();
+complex c8;
+c8=10-c2;
+c8.display();
+complex c9;
+c9=c1*c2;
+c9.display();
+complex c10;
+c10=c1*3;
+c10.display();
+complex c11;
+c11=3*c1;
+c11.display();
+complex c12;
+c12=c1/c2;
+c12.display();
+complex c13;
+c13=c1/5;
+c13.display();
+complex c14;
+c14=5/c2;
+c14.display();
+}
+complex operator+(int a,complex c2)
+{complex temp;
+int r,i;
+r=a+c2.getreal();
+i=a+c2.getimg();
+temp.setreal(r);
+temp.setimg(i);
+return temp;
+}
+complex operator-(int a,complex c2)
+{complex temp;
+int r,i;
+r=a-c2.getreal();
+i=a-c2.getimg();
+temp.setreal(r);
+temp.setimg(i);
+return temp;
+}
+complex operator*(int a,complex c1)
+{ complex temp;
+int r,i;
+r=a*c1.getreal();
+i=a*c1.getimg();
+temp.setreal(r);
+temp.setimg(i);
+return temp;
+}
+complex operator/(int a,complex c2)
+{ complex temp;
+int r,i;
+r=a/c2.getreal();
+i=a/c2.getimg();
+temp.setreal(r);
+temp.setimg(i);
+return temp;
+}
